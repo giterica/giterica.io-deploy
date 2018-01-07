@@ -3,7 +3,7 @@ version: "3"
 services:
   gitericaio:
     # EXPOSE 80
-    image: giterica/giterica.io:1.0.1
+    image: giterica/giterica.io:1.0.2
     deploy:
       resources:
         limits:
