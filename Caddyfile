@@ -1,0 +1,5 @@
+giterica.io {
+    gzip
+    tls sniffsla@gmail.com
+    proxy / gitericaio
+}

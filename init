@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+mkdir -p DATA/caddy-data
+echo "Make data dirs: OK"

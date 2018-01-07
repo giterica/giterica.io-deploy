@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  gitericaio:
+    # EXPOSE 80
+    image: giterica/giterica.io:1.0.0
+    deploy:
+      resources:
+        limits:
+          memory: 250M
+      replicas: 1
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+  caddy:
+    image: abiosoft/caddy:0.10.10
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./Caddyfile:/etc/Caddyfile
+      - ./DATA/caddy-data:/root/.caddy
+    deploy:
+      resources:
+        limits:
+          memory: 250M
+      replicas: 1
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
