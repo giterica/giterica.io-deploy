@@ -3,12 +3,12 @@ version: "3"
 services:
   gitericaio:
     # EXPOSE 80
-    image: giterica/giterica.io:1.0.2
+    image: giterica/giterica.io:1.0.3
     deploy:
       resources:
         limits:
-          memory: 250M
-      replicas: 1
+          memory: 100M
+      replicas: 2
       update_config:
         parallelism: 2
         delay: 10s
